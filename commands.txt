@@ -1,0 +1,21 @@
+===========================================================================================
+Part 1
+===========================================================================================
+py manage.py makemigrations --dry-run --verbosity 3
+py manage.py runserver
+py manage.py createsuperuser 
+pip install coverage
+coverage run --omit='*/venv/*' manage.py test
+coverage html
+pip install djangorestframework
+===========================================================================================
+Part 2
+===========================================================================================
+docker build --tag reactapp .
+docker-compose run app
+docker-compose build
+docker-compose up
+docker-compose run rm app django-admin startproject core .
+docker exec -it djangoapi_container /bin/bash
+or
+docker exec -it e80bb4f2d988afc33cdb /bin/sh
